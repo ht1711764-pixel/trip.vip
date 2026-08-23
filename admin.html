@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Trip.com Admin | Control Panel</title>
+    
+    <!-- ⚡ Google Font CDN (မြန်ဆန်တယ်) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+    
+    <!-- ⚡ Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- ⚡ Bootstrap (Admin Panel အတွက်) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- ⚡ CSS (သီးခြားခွဲထား) -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ===== LOGIN SCREEN ===== -->
+<div id="loginScreen" class="login-screen">
+    <div class="login-box">
+        <div class="brand">
+            <div class="logo-plane"><i class="fas fa-plane"></i></div>
+            <div class="name">Trip.com</div>
+            <div class="sub">Admin Panel</div>
+        </div>
+        <input type="text" class="input-glass" id="loginUser" placeholder="Username">
+        <div class="pw-wrap">
+            <input type="password" class="input-glass" id="loginPass" placeholder="Password">
+            <button class="pw-toggle" id="loginToggle"><i class="fas fa-eye"></i></button>
+        </div>
+        <button class="btn-primary" id="loginBtn"><i class="fas fa-arrow-right-to-bracket"></i> Login</button>
+        
+        <div style="position:relative;margin:16px 0 8px;width:100%;">
+            <div style="border-top:1px solid var(--border);position:absolute;top:50%;left:0;right:0;"></div>
+            <span style="background:var(--bg-card);position:relative;padding:0 12px;color:var(--muted);font-size:11px;">or</span>
+        </div>
+        <button class="btn-google" id="loginGoogleBtn"><i class="fab fa-google"></i> Sign in with Google</button>
+        
+        <div id="loginError" class="error"></div>
+    </div>
+</div>
+
+<!-- ===== ADMIN PANEL ===== -->
+<div id="adminPanel" style="display:none;">
+    <div class="admin-wrap">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-plane"><i class="fas fa-plane"></i></div>
+                <div class="logo-text-name">Trip.com</div>
+                <span class="dot"></span>
+            </div>
+            <div class="nav-item active" data-section="dashboard"><i class="fas fa-chart-pie"></i> Dashboard</div>
+            <div class="nav-item" data-section="members"><i class="fas fa-users"></i> Members <span class="count" id="memberCount">0</span></div>
+            <div class="nav-item" data-section="vip"><i class="fas fa-star"></i> VIP</div>
+            <div class="nav-item" data-section="injection"><i class="fas fa-syringe"></i> Injection</div>
+            <div class="nav-item" data-section="orders"><i class="fas fa-plus-circle"></i> Orders</div>
+            <div class="nav-item" data-section="recharge"><i class="fas fa-coins"></i> Recharge</div>
+            <div class="nav-item" data-section="withdraw"><i class="fas fa-hand-holding-usd"></i> Withdraw</div>
+            <div class="nav-item" data-section="loans"><i class="fas fa-hand-holding-heart"></i> Loans</div>
+            <div class="nav-item" data-section="agency"><i class="fas fa-user-tie"></i> Agencies</div>
+            <div class="nav-item" data-section="settings"><i class="fas fa-paint-brush"></i> Settings</div>
+            <div class="nav-item" data-section="popup"><i class="fas fa-ad"></i> Popup Ads</div>
+            <div class="nav-item" data-section="chat"><i class="fas fa-comment-dots"></i> Chat</div>
+            <div class="nav-item" data-section="notifications"><i class="fas fa-bell"></i> Send Notification</div>
+            <hr class="nav-divider">
+            <div class="nav-item" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Sign Out</div>
+        </div>
+        <!-- Main Content -->
+        <div class="main" id="mainContent"></div>
+    </div>
+</div>
+
+<!-- ===== LIVE INDICATOR ===== -->
+<div class="live-indicator" id="liveIndicator"><i class="fas fa-circle"></i> Live</div>
+
+<!-- ⚡ JavaScript (သီးခြားခွဲထား) -->
+<script type="module" src="admin.js"></script>
+</body>
+</html>
